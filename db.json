@@ -1,16 +1,147 @@
 {
-    "toys": [
+    "may2023": [
       {
         "id": 1,
-        "name": "Woody",
-        "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-        "likes": 8
+        "description": "Rent",
+        "amount": 2500,
+        "category": "Housing",
+        "necessary": true
       },
       {
         "id": 2,
-        "name": "Buzz Lightyear",
-        "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-        "likes": 14
+        "description": "Monthly MetroCard",
+        "amount": 130,
+        "category": "Transportation",
+        "necessary": true
+      },
+      {
+        "id": 3,
+        "description": "Macha Latte from StarBucks",
+        "amount": 6,
+        "category": "Food and Drinks",
+        "necessary": false
+      },
+      {
+        "id": 4,
+        "description": "Groceries from Trader Joes",
+        "amount": 50,
+        "category": "Food and Drinks",
+        "necessary": true
+      },
+      {
+        "id": 5,
+        "description": "Happy Hour and eating out",
+        "amount": 90,
+        "category": "Food and Drinks",
+        "necessary": false
+      },
+      {
+        "id": 6,
+        "description": "Movie Date Night",
+        "amount": 40,
+        "category": "Entertainment",
+        "necessary": false
+      },
+      {
+        "id": 7,
+        "description": "Clothes shopping at H&M",
+        "amount": 100,
+        "category": "Personal",
+        "necessary": false
+      },
+      {
+        "id": 8,
+        "description": "Annual doctor appointment - copayment",
+        "amount": 60,
+        "category": "Health",
+        "necessary": true
+      },
+      {
+        "id": 9,
+        "description": "Switch games",
+        "amount": 60,
+        "category": "Entertainment",
+        "necessary": false
+      },
+      {
+        "id": 10,
+        "description": "Ice latte at local cafe",
+        "amount": 5,
+        "category": "Food and Drinks",
+        "necessary": false
+      }
+    ],
+
+    "june2023": [
+      {
+        "id": 1,
+        "description": "Rent",
+        "amount": 2500,
+        "category": "Housing",
+        "necessary": true
+      },
+      {
+        "id": 2,
+        "description": "Monthly MetroCard",
+        "amount": 130,
+        "category": "Transportation",
+        "necessary": true
+      },
+      {
+        "id": 3,
+        "description": "Annual Gym Membership",
+        "amount": 200,
+        "category": "Health",
+        "necessary": true
+      },
+      {
+        "id": 4,
+        "description": "Groceries from Trader Joes",
+        "amount": 100,
+        "category": "Food and Drinks",
+        "necessary": true
+      },
+      {
+        "id": 5,
+        "description": "Birthday parties supplies",
+        "amount": 75,
+        "category": "Entertainment",
+        "necessary": false
+      },
+      {
+        "id": 6,
+        "description": "Uber home",
+        "amount": 23,
+        "category": "Transportation",
+        "necessary": false
+      },
+      {
+        "id": 7,
+        "description": "Dog toys at PetSmart",
+        "amount": 65,
+        "category": "Personal",
+        "necessary": false
+      },
+      {
+        "id": 8,
+        "description": "Haircut at my favorite Salon",
+        "amount": 110,
+        "category": "Personal",
+        "necessary": false
+      },
+      {
+        "id": 9,
+        "description": "Toilet Paper",
+        "amount": 15,
+        "category": "Personal",
+        "necessary": true
+      },
+      {
+        "id": 10,
+        "description": "Ice latte at local cafe",
+        "amount": 5,
+        "category": "Food and Drinks",
+        "necessary": false
       }
     ]
   }
