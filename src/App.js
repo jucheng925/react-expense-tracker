@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home"
 import NavBar from "./NavBar"
-import MonthsList from "./MonthsList"
+import MonthsPage from "./MonthsPage"
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Home />
       </Route>
       <Route path="/months">
-        <MonthsList />
+        <MonthsPage />
       </Route>
       </Switch>
     </div>

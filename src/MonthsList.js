@@ -1,17 +1,23 @@
-import React, {useState, useEffect} from 'react'
-import Month from "./Month"
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-function MonthsList() {
-   const [months, setMonths] = useState([])
-    useEffect(() => {
-        fetch("http://localhost:3000/months")
-        .then(resp => resp.json())
-        .then(data => setMonths(data))
-    }, [])
+function MonthsList({months}) {
+
+    const renderMonths = months.map((month) => {
+      const dispYear = month.month_year.slice(-4) 
+      const dispMonth = month.month_year.slice(0, -4)
+      const capitalizedDispMonth = dispMonth.charAt(0).toUpperCase() + dispMonth.slice(1)
+      return (
+         <li key={month.id}>
+         <Link to={`/months/${month.month_year}`}>{capitalizedDispMonth} {dispYear}</Link>
+       </li>
+      )
+      });
 
   return (
      <ul>
-        {months.map(month => <Month key={month.id} month={month}/>)}
+        {/* {months.map(month => <Month key={month.id} month={month}/>)} */}
+        {renderMonths}
      </ul>
   )
 }

@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import ExpensesList from "./ExpensesList"
 
 function Month({month}) {
-  const dispYear = month.month_year.slice(-4) 
-  const dispMonth = month.month_year.slice(0, -4)
-  const capitalizedDispMonth = dispMonth.charAt(0).toUpperCase() + dispMonth.slice(1)
+  // const [expenses, setExpenses] = useState([])
+
+  
+  // useEffect(()=>{
+  //   fetch(`http://localhost:3000/${month.month_year}`)
+  //   .then(resp => resp.json())
+  //   .then(data => setExpenses(data))
+  // }, [])
+
+
   return (
-    <li>{capitalizedDispMonth} {dispYear}</li>
+    <h1>Hello</h1>
+    // <ExpensesList expenses={expenses}/>
   )
 }
 
