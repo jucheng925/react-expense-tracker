@@ -1,16 +1,17 @@
 import React, {useState, useEffect} from 'react'
+import Month from "./Month"
 
 function MonthsList() {
-    // useEffect(() => {
-    //     fetch("http://localhost:3000/")
-    //     .then(resp => resp.json())
-    //     .then(data => console.log(data))
-    // }, [])
+   const [months, setMonths] = useState([])
+    useEffect(() => {
+        fetch("http://localhost:3000/months")
+        .then(resp => resp.json())
+        .then(data => setMonths(data))
+    }, [])
 
   return (
      <ul>
-        <li>May 2023</li>
-        <li>June 2023</li>
+        {months.map(month => <Month key={month.id} month={month}/>)}
      </ul>
   )
 }

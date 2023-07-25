@@ -143,5 +143,15 @@
         "category": "Food and Drinks",
         "necessary": false
       }
+    ],
+    "months": [
+      {
+        "id": 1,
+        "month_year": "may2023"
+      },
+      {
+        "id": 2,
+        "month_year": "june2023"
+      }
     ]
   }
