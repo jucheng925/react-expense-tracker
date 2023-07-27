@@ -1,29 +1,60 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 function ExpenseForm() {
+  const [formData, setFormData] = useState({
+            description: "",
+            amount: 0,
+            category: "housing",
+            necessary: true
+          })
+  
+  function handleChange(e) {
+    const name = e.target.name
+    let value = e.target.value
+    if (e.target.type === "checkbox") {
+      value = e.target.checked;
+    }
+    else if (e.target.type === "number") {
+      value = parseInt(e.target.value)
+    }
+    setFormData({
+      ...formData,
+      [name]: value,
+    })
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    console.log(formData)
+  }
+
+
   return (
-    <form>
-      <label for="description"> Expense Descrition: </label>
-      <input type="text" id="description" name="description" value="description" />
+    <>
+    <h3>Add an Expense</h3>
+    <form onSubmit={handleSubmit}>
+      <label for="description"> Expense Description: </label>
+      <input type="text" id="description" name="description" value={formData.description} onChange={handleChange} />
       <br />
       <label for="amount"> Expense Amount: </label>
-      <input type="number" id="amount" name="amount" value="0" />
+      <input type="number" id="amount" name="amount" value={formData.amount} onChange={handleChange}/>
       <br />
       <label for="categories"> Expense Category: </label>
-      <select id="categories">
-        <option value="housing">Housing</option>
-        <option value="transportation">Transportation</option>
-        <option value="foodanddrinks">Food and Drinks</option>
-        <option value="health">Health</option>
-        <option value="entertainment">Entertainment</option>
-        <option value="personal">personal</option>
+      <select id="categories" name="category" onChange={handleChange}>
+        <option value="housing"> Housing</option>
+        <option value="transportation"> Transportation</option>
+        <option value="foodanddrinks"> Food and Drinks</option>
+        <option value="health"> Health</option>
+        <option value="entertainment"> Entertainment</option>
+        <option value="personal"> Personal</option>
       </select>
       <br />
-      <input type ="checkbox" id="necessary" checked={true} />
-      <label for="necessary"> Necessary </label>
+      <input type ="checkbox" id="necessary" name="necessary" checked={formData.necessary} onChange={handleChange}/>
+      <label for="necessary"> Is necessary </label>
       <br />
       <button type="submit">Submit</button>
     </form>
+    </>
   )
 }
 
