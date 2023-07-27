@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import MonthsList from "./MonthsList"
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Month from "./Month"
+import ExpenseForm from './ExpenseForm';
 
 
 function MonthsPage() {
@@ -16,9 +17,14 @@ function MonthsPage() {
   return (
     <div>
       <MonthsList months={months} />
-      <Route exact path="/months/:monthyear">
-        <Month />
-      </Route>
+      <Switch>
+        <Route exact path="/months/:monthyear/add">
+          <ExpenseForm />
+        </Route>
+        <Route exact path="/months/:monthyear">
+          <Month />
+        </Route>
+      </Switch>
     </div>
   )
 }
