@@ -9,16 +9,18 @@ function MonthsList({months}) {
       const capitalizedDispMonth = dispMonth.charAt(0).toUpperCase() + dispMonth.slice(1)
       return (
          <li key={month.id}>
-         <Link to={`/months/${month.month_year}`}>{capitalizedDispMonth} {dispYear}</Link>
-       </li>
-      )
+            <Link to={`/months/${month.month_year}`}>{capitalizedDispMonth} {dispYear}</Link>
+         </li>
+         )
       });
 
   return (
-     <ul>
-        {/* {months.map(month => <Month key={month.id} month={month}/>)} */}
-        {renderMonths}
-     </ul>
+      <>
+         <p>Select the month that you will like to know about</p>
+         <ul>
+            {renderMonths}
+         </ul>
+     </>
   )
 }
 

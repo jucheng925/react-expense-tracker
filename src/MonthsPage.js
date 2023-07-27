@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import { Route, useRouteMatch } from "react-router-dom";
 import MonthsList from "./MonthsList"
+import { Route } from "react-router-dom";
 import Month from "./Month"
+
 
 function MonthsPage() {
     const [months, setMonths] = useState([])
@@ -11,12 +12,11 @@ function MonthsPage() {
         .then(data => setMonths(data))
     }, [])
 
-    const match = useRouteMatch();
 
   return (
     <div>
       <MonthsList months={months} />
-      <Route path={`${match.url}/may2023`}>
+      <Route exact path="/months/:monthyear">
         <Month />
       </Route>
     </div>

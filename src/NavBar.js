@@ -37,16 +37,6 @@ function NavBar() {
       >
         Months
       </NavLink>
-      <NavLink
-        to="/login"
-        exact
-        style={linkStyles}
-        activeStyle={{
-          background: "darkblue",
-        }}
-      >
-        Login
-      </NavLink>
     </div>
   );
 }
