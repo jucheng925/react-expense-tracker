@@ -13,16 +13,24 @@ function MonthsPage() {
         .then(data => setMonths(data))
     }, [])
 
+    function capMonthandSpaceYear(monthYear) {
+      const dispYear = monthYear.slice(-4) 
+      const dispMonth = monthYear.slice(0, -4)
+      const capitalizedDispMonth = dispMonth.charAt(0).toUpperCase() + dispMonth.slice(1)
+      return (capitalizedDispMonth + " " + dispYear)
+    }
 
   return (
     <div>
-      <MonthsList months={months} />
       <Switch>
-        <Route exact path="/months/:monthyear/add">
-          <ExpenseForm />
+        <Route exact path="/months/add">
+          <ExpenseForm months={months} displayFunction={capMonthandSpaceYear}/>
         </Route>
-        <Route exact path="/months/:monthyear">
+        <Route path="/months/:monthyear">
           <Month />
+        </Route>
+        <Route path="/months/">
+          <MonthsList months={months} displayFunction={capMonthandSpaceYear}/>
         </Route>
       </Switch>
     </div>

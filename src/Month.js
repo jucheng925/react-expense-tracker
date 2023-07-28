@@ -15,7 +15,7 @@ function Month() {
   return (
     <>
     <h1>Here are your expenses for the month.</h1>
-    <Link to={`/months/${params.monthyear}/add`}>Add New Expense</Link>
+    <Link to={`/months/add`}>Add New Expense</Link>
     {expenses.map(expense => <Expense key={expense.id} expense={expense} />)}
    </>
   )

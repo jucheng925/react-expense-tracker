@@ -1,18 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function MonthsList({months}) {
-
-    const renderMonths = months.map((month) => {
-      const dispYear = month.month_year.slice(-4) 
-      const dispMonth = month.month_year.slice(0, -4)
-      const capitalizedDispMonth = dispMonth.charAt(0).toUpperCase() + dispMonth.slice(1)
-      return (
+function MonthsList({months, displayFunction}) {
+    const renderMonths = months.map((month) => (
          <li key={month.id}>
-            <Link to={`/months/${month.month_year}`}>{capitalizedDispMonth} {dispYear}</Link>
+            <Link to={`/months/${month.month_year}`}>{displayFunction(month.month_year)}</Link>
          </li>
          )
-      });
+      );
 
   return (
       <>

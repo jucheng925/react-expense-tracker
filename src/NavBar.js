@@ -37,6 +37,16 @@ function NavBar() {
       >
         Months
       </NavLink>
+      <NavLink
+        to="/months/add"
+        exact
+        style={linkStyles}
+        activeStyle={{
+          background: "darkblue",
+        }}
+      >
+        Expense Form
+      </NavLink>
     </div>
   );
 }

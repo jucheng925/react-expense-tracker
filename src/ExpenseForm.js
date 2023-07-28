@@ -1,12 +1,16 @@
 import React, {useState} from 'react'
 
-function ExpenseForm() {
+function ExpenseForm({ months, displayFunction }) {
   const [formData, setFormData] = useState({
+            month: "",
             description: "",
             amount: 0,
             category: "housing",
             necessary: true
           })
+  
+  const renderDropDownMonths = months.map((month) => <option value={month.month_year}>{displayFunction(month.month_year)}</option>)
+  
   
   function handleChange(e) {
     const name = e.target.name
@@ -33,6 +37,11 @@ function ExpenseForm() {
     <>
     <h3>Add an Expense</h3>
     <form onSubmit={handleSubmit}>
+      <label for="months">Expense Month: </label>
+      <select id="months" name="month" onChange={handleChange}>
+        {renderDropDownMonths}
+      </select>
+      <br/>
       <label for="description"> Expense Description: </label>
       <input type="text" id="description" name="description" value={formData.description} onChange={handleChange} />
       <br />
