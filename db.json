@@ -1,7 +1,8 @@
 {
-    "may2023": [
+    "expenses": [
       {
         "id": 1,
+        "month": "may2023",
         "description": "Rent",
         "amount": 2500,
         "category": "Housing",
@@ -9,6 +10,7 @@
       },
       {
         "id": 2,
+        "month": "may2023",
         "description": "Monthly MetroCard",
         "amount": 130,
         "category": "Transportation",
@@ -16,6 +18,7 @@
       },
       {
         "id": 3,
+        "month": "may2023",
         "description": "Macha Latte from StarBucks",
         "amount": 6,
         "category": "Food and Drinks",
@@ -23,6 +26,7 @@
       },
       {
         "id": 4,
+        "month": "may2023",
         "description": "Groceries from Trader Joes",
         "amount": 50,
         "category": "Food and Drinks",
@@ -30,6 +34,7 @@
       },
       {
         "id": 5,
+        "month": "may2023",
         "description": "Happy Hour and eating out",
         "amount": 90,
         "category": "Food and Drinks",
@@ -37,6 +42,7 @@
       },
       {
         "id": 6,
+        "month": "may2023",
         "description": "Movie Date Night",
         "amount": 40,
         "category": "Entertainment",
@@ -44,6 +50,7 @@
       },
       {
         "id": 7,
+        "month": "may2023",
         "description": "Clothes shopping at H&M",
         "amount": 100,
         "category": "Personal",
@@ -51,6 +58,7 @@
       },
       {
         "id": 8,
+        "month": "may2023",
         "description": "Annual doctor appointment - copayment",
         "amount": 60,
         "category": "Health",
@@ -58,6 +66,7 @@
       },
       {
         "id": 9,
+        "month": "may2023",
         "description": "Switch games",
         "amount": 60,
         "category": "Entertainment",
@@ -65,93 +74,91 @@
       },
       {
         "id": 10,
+        "month": "may2023",
         "description": "Ice latte at local cafe",
         "amount": 5,
         "category": "Food and Drinks",
         "necessary": false
-      }
-    ],
-
-    "june2023": [
+      },
       {
-        "id": 1,
+        "id": 11,
+        "month": "june2023",
         "description": "Rent",
         "amount": 2500,
         "category": "Housing",
         "necessary": true
       },
       {
-        "id": 2,
+        "id": 12,
+        "month": "june2023",
         "description": "Monthly MetroCard",
         "amount": 130,
         "category": "Transportation",
         "necessary": true
       },
       {
-        "id": 3,
+        "id": 13,
+        "month": "june2023",
         "description": "Annual Gym Membership",
         "amount": 200,
         "category": "Health",
         "necessary": true
       },
       {
-        "id": 4,
+        "id": 14,
+        "month": "june2023",
         "description": "Groceries from Trader Joes",
         "amount": 100,
         "category": "Food and Drinks",
         "necessary": true
       },
       {
-        "id": 5,
+        "id": 15,
+        "month": "june2023",
         "description": "Birthday parties supplies",
         "amount": 75,
         "category": "Entertainment",
         "necessary": false
       },
       {
-        "id": 6,
+        "id": 16,
+        "month": "june2023",
         "description": "Uber home",
         "amount": 23,
         "category": "Transportation",
         "necessary": false
       },
       {
-        "id": 7,
+        "id": 17,
+        "month": "june2023",
         "description": "Dog toys at PetSmart",
         "amount": 65,
         "category": "Personal",
         "necessary": false
       },
       {
-        "id": 8,
+        "id": 18,
+        "month": "june2023",
         "description": "Haircut at my favorite Salon",
         "amount": 110,
         "category": "Personal",
         "necessary": false
       },
       {
-        "id": 9,
+        "id": 19,
+        "month": "june2023",
         "description": "Toilet Paper",
         "amount": 15,
         "category": "Personal",
         "necessary": true
       },
       {
-        "id": 10,
+        "id": 20,
+        "month": "june2023",
         "description": "Ice latte at local cafe",
         "amount": 5,
         "category": "Food and Drinks",
         "necessary": false
-      }
-    ],
-    "months": [
-      {
-        "id": 1,
-        "month_year": "may2023"
-      },
-      {
-        "id": 2,
-        "month_year": "june2023"
       }
     ]
   }

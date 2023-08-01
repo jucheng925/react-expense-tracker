@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react'
 import Expense from "./Expense"
 import { Link, useParams } from "react-router-dom";
 
-function Month() {
-  const [expenses, setExpenses] = useState([])
+function Month({expenses}) {
+  // const [expenses, setExpenses] = useState([])
   const params = useParams();
 
-  useEffect(()=>{
-      fetch(`http://localhost:3000/${params.monthyear}`)
-      .then(resp => resp.json())
-      .then(data => setExpenses(data))
-    }, [params])
+  // useEffect(()=>{
+  //     fetch(`http://localhost:3000/${params.monthyear}`)
+  //     .then(resp => resp.json())
+  //     .then(data => setExpenses(data))
+  //   }, [params])
+  
 
   return (
     <>

@@ -7,11 +7,33 @@ import ExpenseForm from './ExpenseForm';
 
 function MonthsPage() {
     const [months, setMonths] = useState([])
+    const [expenses, setExpenses] = useState({})
+
     useEffect(() => {
         fetch("http://localhost:3000/months")
         .then(resp => resp.json())
-        .then(data => setMonths(data))
+        .then(data => {
+          setMonths(data)
+          const newExpenses = fetchAndSetExpenses(data)
+          setExpenses(newExpenses)
+          debugger
+        })
     }, [])
+
+
+    function fetchAndSetExpenses(dataMonths) {
+      let fetchExpenses = {}
+      dataMonths.forEach((month) => {
+        fetch(`http://localhost:3000/${month.month_year}`)
+        .then(resp => resp.json())
+        .then(data => {
+            fetchExpenses = {...fetchExpenses, [month.month_year] : data}
+            debugger
+        })
+        return fetchExpenses
+      })
+    }
+
 
     function capMonthandSpaceYear(monthYear) {
       const dispYear = monthYear.slice(-4) 
@@ -27,7 +49,7 @@ function MonthsPage() {
           <ExpenseForm months={months} displayFunction={capMonthandSpaceYear}/>
         </Route>
         <Route path="/months/:monthyear">
-          <Month />
+          <Month expenses={expenses}/>
         </Route>
         <Route path="/months/">
           <MonthsList months={months} displayFunction={capMonthandSpaceYear}/>
