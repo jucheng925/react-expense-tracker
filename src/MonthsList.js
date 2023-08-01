@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 function MonthsList({months, displayFunction}) {
     const renderMonths = months.map((month) => (
-         <li key={month.id}>
-            <Link to={`/months/${month.month_year}`}>{displayFunction(month.month_year)}</Link>
+         <li key={month}>
+            <Link to={`/months/${month}`}>{displayFunction(month)}</Link>
          </li>
          )
       );

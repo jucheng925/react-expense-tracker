@@ -10,30 +10,22 @@ function MonthsPage() {
     const [expenses, setExpenses] = useState({})
 
     useEffect(() => {
-        fetch("http://localhost:3000/months")
+        fetch("http://localhost:3000/expenses")
         .then(resp => resp.json())
         .then(data => {
-          setMonths(data)
-          const newExpenses = fetchAndSetExpenses(data)
-          setExpenses(newExpenses)
-          debugger
-        })
+          setExpenses(data)
+          createMonthArray(data)})
     }, [])
 
-
-    function fetchAndSetExpenses(dataMonths) {
-      let fetchExpenses = {}
-      dataMonths.forEach((month) => {
-        fetch(`http://localhost:3000/${month.month_year}`)
-        .then(resp => resp.json())
-        .then(data => {
-            fetchExpenses = {...fetchExpenses, [month.month_year] : data}
-            debugger
-        })
-        return fetchExpenses
+    function createMonthArray(data) {
+      const monthArray = []
+      data.forEach((expense)=> {
+        if(!monthArray.includes(expense.month)) {
+          monthArray.push(expense.month)
+        }
       })
+      setMonths(monthArray)
     }
-
 
     function capMonthandSpaceYear(monthYear) {
       const dispYear = monthYear.slice(-4) 
@@ -45,9 +37,9 @@ function MonthsPage() {
   return (
     <div>
       <Switch>
-        <Route exact path="/months/add">
-          <ExpenseForm months={months} displayFunction={capMonthandSpaceYear}/>
-        </Route>
+        {/* <Route exact path="/months/add">
+          <ExpenseForm displayFunction={capMonthandSpaceYear}/>
+        </Route> */}
         <Route path="/months/:monthyear">
           <Month expenses={expenses}/>
         </Route>

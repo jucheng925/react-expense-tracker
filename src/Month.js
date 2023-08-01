@@ -3,21 +3,17 @@ import Expense from "./Expense"
 import { Link, useParams } from "react-router-dom";
 
 function Month({expenses}) {
-  // const [expenses, setExpenses] = useState([])
+  const [monthExpenses, setMonthExpenses] = useState([])
   const params = useParams();
 
-  // useEffect(()=>{
-  //     fetch(`http://localhost:3000/${params.monthyear}`)
-  //     .then(resp => resp.json())
-  //     .then(data => setExpenses(data))
-  //   }, [params])
+  const filterExpenses = expenses.filter(expense => expense.month === params.monthyear)
+  setMonthExpenses(filterExpenses)
   
-
   return (
     <>
     <h1>Here are your expenses for the month.</h1>
     <Link to={`/months/add`}>Add New Expense</Link>
-    {expenses.map(expense => <Expense key={expense.id} expense={expense} />)}
+    {monthExpenses.map(expense => <Expense key={expense.id} expense={expense} />)}
    </>
   )
 }
