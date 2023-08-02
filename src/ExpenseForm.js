@@ -42,9 +42,7 @@ function ExpenseForm({ months, displayFunction, addNewExpense }) {
     .then((newExpense) => {
       addNewExpense(newExpense)
       history.push(`/months/${formData.month}`)})
-
   }
-
 
   return (
     <>

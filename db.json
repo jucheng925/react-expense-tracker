@@ -94,7 +94,7 @@
       "description": "Monthly MetroCard",
       "amount": 130,
       "category": "Transportation",
-      "necessary": false
+      "necessary": true
     },
     {
       "id": 13,

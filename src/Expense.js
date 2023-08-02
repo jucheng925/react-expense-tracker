@@ -3,7 +3,6 @@ import Emoji from "./Emoji"
 
 function Expense({expense, onUpdateExpense}) {
 
-
   function handleClick() {
     fetch(`http://localhost:3000/expenses/${expense.id}`, {
       method: "PATCH",

@@ -1,30 +1,20 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import MonthsList from "./MonthsList"
 import { Route, Switch } from "react-router-dom";
 import Month from "./Month"
 import ExpenseForm from './ExpenseForm';
 
 
-function MonthsPage() {
-    const [months, setMonths] = useState([])
-    const [expenses, setExpenses] = useState({})
+function MonthsPage({expenses, onUpdateExpense, addNewExpense}) {
 
-    useEffect(() => {
-        fetch("http://localhost:3000/expenses")
-        .then(resp => resp.json())
-        .then(data => {
-          setExpenses(data)
-          createMonthArray(data)})
-    }, [])
-
-    function createMonthArray(data) {
+    const createMonthArray = () => {
       const monthArray = []
-      data.forEach((expense)=> {
+      expenses.forEach((expense)=> {
         if(!monthArray.includes(expense.month)) {
           monthArray.push(expense.month)
         }
       })
-      setMonths(monthArray)
+      return monthArray
     }
 
     function capMonthandSpaceYear(monthYear) {
@@ -34,33 +24,17 @@ function MonthsPage() {
       return (capitalizedDispMonth + " " + dispYear)
     }
 
-    function addNewExpense(newExpense) {
-      setExpenses([...expenses, newExpense])
-    }
-
-    function handleUpdateExpense(updatedExpense) {
-      const updatedExpenses = expenses.map((expense) => {
-        if (expense.id === updatedExpense.id) {
-          return updatedExpense;
-        } else {
-          return expense;
-        }
-      });
-      setExpenses(updatedExpenses)
-    }
-
-
   return (
     <div>
       <Switch>
-        <Route exact path="/months/add">
-          <ExpenseForm months={months} displayFunction={capMonthandSpaceYear} addNewExpense={addNewExpense}/>
+        <Route path="/months/add">
+          <ExpenseForm months={createMonthArray()} displayFunction={capMonthandSpaceYear} addNewExpense={addNewExpense}/>
         </Route>
         <Route path="/months/:monthyear">
-          <Month expenses={expenses} displayFunction={capMonthandSpaceYear} onUpdateExpense={handleUpdateExpense}/>
+          <Month expenses={expenses} displayFunction={capMonthandSpaceYear} onUpdateExpense={onUpdateExpense}/>
         </Route>
-        <Route path="/months/">
-          <MonthsList months={months} displayFunction={capMonthandSpaceYear}/>
+        <Route exact path="/months/">
+            <MonthsList months={createMonthArray()} displayFunction={capMonthandSpaceYear}/>
         </Route>
       </Switch>
     </div>
