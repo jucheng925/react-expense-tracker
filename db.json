@@ -30,7 +30,7 @@
       "description": "Groceries from Trader Joes",
       "amount": 50,
       "category": "Food and Drinks",
-      "necessary": true
+      "necessary": false
     },
     {
       "id": 5,
@@ -94,7 +94,7 @@
       "description": "Monthly MetroCard",
       "amount": 130,
       "category": "Transportation",
-      "necessary": true
+      "necessary": false
     },
     {
       "id": 13,
@@ -159,46 +159,6 @@
       "amount": 5,
       "category": "Food and Drinks",
       "necessary": false
-    },
-    {
-      "month": "june2023",
-      "description": "testing description",
-      "amount": 655,
-      "category": "Health",
-      "necessary": false,
-      "id": 21
-    },
-    {
-      "month": "may2023",
-      "description": "testing description",
-      "amount": 5555,
-      "category": "Personal",
-      "necessary": false,
-      "id": 22
-    },
-    {
-      "month": "june2023",
-      "description": "testing description",
-      "amount": 666,
-      "category": "Health",
-      "necessary": false,
-      "id": 23
-    },
-    {
-      "month": "june2023",
-      "description": "testing description",
-      "amount": 5555,
-      "category": "housing",
-      "necessary": false,
-      "id": 24
-    },
-    {
-      "month": "may2023",
-      "description": "money",
-      "amount": 5555,
-      "category": "Entertainment",
-      "necessary": true,
-      "id": 25
     }
   ]
 }

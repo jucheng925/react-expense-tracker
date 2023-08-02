@@ -38,6 +38,17 @@ function MonthsPage() {
       setExpenses([...expenses, newExpense])
     }
 
+    function handleUpdateExpense(updatedExpense) {
+      const updatedExpenses = expenses.map((expense) => {
+        if (expense.id === updatedExpense.id) {
+          return updatedExpense;
+        } else {
+          return expense;
+        }
+      });
+      setExpenses(updatedExpenses)
+    }
+
 
   return (
     <div>
@@ -46,7 +57,7 @@ function MonthsPage() {
           <ExpenseForm months={months} displayFunction={capMonthandSpaceYear} addNewExpense={addNewExpense}/>
         </Route>
         <Route path="/months/:monthyear">
-          <Month expenses={expenses} displayFunction={capMonthandSpaceYear}/>
+          <Month expenses={expenses} displayFunction={capMonthandSpaceYear} onUpdateExpense={handleUpdateExpense}/>
         </Route>
         <Route path="/months/">
           <MonthsList months={months} displayFunction={capMonthandSpaceYear}/>
