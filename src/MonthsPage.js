@@ -34,14 +34,19 @@ function MonthsPage() {
       return (capitalizedDispMonth + " " + dispYear)
     }
 
+    function addNewExpense(newExpense) {
+      setExpenses([...expenses, newExpense])
+    }
+
+
   return (
     <div>
       <Switch>
-        {/* <Route exact path="/months/add">
-          <ExpenseForm displayFunction={capMonthandSpaceYear}/>
-        </Route> */}
+        <Route exact path="/months/add">
+          <ExpenseForm months={months} displayFunction={capMonthandSpaceYear} addNewExpense={addNewExpense}/>
+        </Route>
         <Route path="/months/:monthyear">
-          <Month expenses={expenses}/>
+          <Month expenses={expenses} displayFunction={capMonthandSpaceYear}/>
         </Route>
         <Route path="/months/">
           <MonthsList months={months} displayFunction={capMonthandSpaceYear}/>

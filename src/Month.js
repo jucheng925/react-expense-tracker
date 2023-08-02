@@ -1,19 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Expense from "./Expense"
 import { Link, useParams } from "react-router-dom";
 
-function Month({expenses}) {
-  const [monthExpenses, setMonthExpenses] = useState([])
+function Month({expenses,  displayFunction}) {
   const params = useParams();
-
   const filterExpenses = expenses.filter(expense => expense.month === params.monthyear)
-  setMonthExpenses(filterExpenses)
-  
+
   return (
     <>
-    <h1>Here are your expenses for the month.</h1>
+    <h1>Here are your expenses for {displayFunction(params.monthyear)}</h1>
     <Link to={`/months/add`}>Add New Expense</Link>
-    {monthExpenses.map(expense => <Expense key={expense.id} expense={expense} />)}
+    {filterExpenses.map(expense => <Expense key={expense.id} expense={expense} />)}
    </>
   )
 }
