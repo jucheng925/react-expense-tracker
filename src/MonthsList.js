@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { StyledLinkList } from './styled/Body.styled';
 
 function MonthsList({months, displayFunction}) {
     const renderMonths = months.map((month) => (
@@ -11,10 +12,10 @@ function MonthsList({months, displayFunction}) {
 
   return (
       <>
-         <p>Select the month that you will like to know about</p>
-         <ul>
+         <p>Select the month that you will like to know about: </p>
+         <StyledLinkList>
             {renderMonths}
-         </ul>
+         </StyledLinkList>
      </>
   )
 }

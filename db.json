@@ -19,7 +19,7 @@
     {
       "id": 3,
       "month": "may2023",
-      "description": "Macha Latte from StarBucks",
+      "description": "Matcha latte from StarBucks",
       "amount": 6,
       "category": "Food and Drinks",
       "necessary": false
@@ -35,7 +35,7 @@
     {
       "id": 5,
       "month": "may2023",
-      "description": "Happy Hour and eating out",
+      "description": "Happy hour and dinner",
       "amount": 90,
       "category": "Food and Drinks",
       "necessary": false
@@ -43,7 +43,7 @@
     {
       "id": 6,
       "month": "may2023",
-      "description": "Movie Date Night",
+      "description": "Movie date night",
       "amount": 40,
       "category": "Entertainment",
       "necessary": false
@@ -67,7 +67,7 @@
     {
       "id": 9,
       "month": "may2023",
-      "description": "Switch games",
+      "description": "Switch Games",
       "amount": 60,
       "category": "Entertainment",
       "necessary": false
@@ -99,7 +99,7 @@
     {
       "id": 13,
       "month": "june2023",
-      "description": "Annual Gym Membership",
+      "description": "Annual gym membership",
       "amount": 200,
       "category": "Health",
       "necessary": true
@@ -115,7 +115,7 @@
     {
       "id": 15,
       "month": "june2023",
-      "description": "Birthday parties supplies",
+      "description": "Birthday party supplies",
       "amount": 75,
       "category": "Entertainment",
       "necessary": false
@@ -123,7 +123,7 @@
     {
       "id": 16,
       "month": "june2023",
-      "description": "Uber home",
+      "description": "Uber back home",
       "amount": 23,
       "category": "Transportation",
       "necessary": false
@@ -139,7 +139,7 @@
     {
       "id": 18,
       "month": "june2023",
-      "description": "Haircut at my favorite Salon",
+      "description": "Haircut at my favorite salon",
       "amount": 110,
       "category": "Personal",
       "necessary": false
@@ -147,7 +147,7 @@
     {
       "id": 19,
       "month": "june2023",
-      "description": "Toilet Paper",
+      "description": "Toilet paper",
       "amount": 15,
       "category": "Personal",
       "necessary": true

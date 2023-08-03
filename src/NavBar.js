@@ -4,10 +4,10 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
   const linkStyles = {
     display: "inline-block",
-    width: "50px",
+    width: "100px",
     padding: "12px",
     margin: "0 6px 6px",
-    background: "blue",
+    background: "#800080",
     textDecoration: "none",
     color: "white",
   };
@@ -19,7 +19,7 @@ function NavBar() {
         exact
         style={linkStyles}
         activeStyle={{
-          background: "darkblue",
+          background: "#1d1160",
         }}
       >
         Home
@@ -29,7 +29,7 @@ function NavBar() {
         exact
         style={linkStyles}
         activeStyle={{
-          background: "darkblue",
+          background: "#1d1160",
         }}
       >
         Months
@@ -39,7 +39,7 @@ function NavBar() {
         exact
         style={linkStyles}
         activeStyle={{
-          background: "darkblue",
+          background: "#1d1160",
         }}
       >
         Expense Form

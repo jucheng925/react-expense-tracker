@@ -1,5 +1,6 @@
 import React from 'react'
 import Emoji from "./Emoji"
+import { StyledExpense } from './styled/Body.styled'
 
 function Expense({expense, onUpdateExpense}) {
 
@@ -18,12 +19,12 @@ function Expense({expense, onUpdateExpense}) {
   }
 
   return (
-    <>
-    <h2>{expense.description}</h2>
-    <h4>{expense.amount}</h4>
-    <p>{expense.category} <Emoji category={expense.category}/></p>
-    <button onClick={handleClick}>{expense.necessary ? "Necessary" : "Not Necessary"}</button>
-    </>
+    <StyledExpense>
+      <h2>{expense.description}</h2>
+      <h4>{expense.amount}</h4>
+      <p>{expense.category} <Emoji category={expense.category}/></p>
+      <button onClick={handleClick}>{expense.necessary ? "Necessary" : "Not Necessary"}</button>
+    </StyledExpense>
   )
 }
 

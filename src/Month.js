@@ -1,6 +1,7 @@
 import React from 'react'
 import Expense from "./Expense"
 import { Link, useParams } from "react-router-dom";
+import { StyledContainer } from './styled/Body.styled';
 
 function Month({expenses, displayFunction, onUpdateExpense}) {
   const params = useParams();
@@ -10,7 +11,9 @@ function Month({expenses, displayFunction, onUpdateExpense}) {
     <>
     <h1>Here are your expenses for {displayFunction(params.monthyear)}</h1>
     <Link to={`/months/add`}>Add New Expense</Link>
-    {filterExpenses.map(expense => <Expense key={expense.id} expense={expense} onUpdateExpense={onUpdateExpense}/>)}
+      <StyledContainer >
+        {filterExpenses.map(expense => <Expense key={expense.id} expense={expense} onUpdateExpense={onUpdateExpense}/>)}
+      </StyledContainer>
    </>
   )
 }

@@ -1,9 +1,10 @@
-import './App.css';
 import { Route, Switch } from "react-router-dom";
 import React, {useState, useEffect} from 'react'
 import Home from "./Home"
 import NavBar from "./NavBar"
 import MonthsPage from "./MonthsPage"
+import { StyledHeader } from "./styled/Header.styled";
+import { StyledBody } from "./styled/Body.styled";
 
 
 
@@ -32,17 +33,22 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <NavBar />
-      <Switch>
-      <Route path="/months">
-        <MonthsPage expenses={expenses} addNewExpense={addNewExpense} onUpdateExpense={handleUpdateExpense}/>
-      </Route>
-      <Route exact path="/">
-        <Home expenses={expenses}/>
-      </Route>
-      </Switch>
-    </div>
+    <>
+      <StyledHeader>
+        <h1>Personal Expense Tracker</h1>
+        <NavBar />
+      </StyledHeader>
+      <StyledBody>
+        <Switch>
+        <Route path="/months">
+          <MonthsPage expenses={expenses} addNewExpense={addNewExpense} onUpdateExpense={handleUpdateExpense}/>
+        </Route>
+        <Route exact path="/">
+          <Home expenses={expenses}/>
+        </Route>
+        </Switch>
+      </StyledBody>
+    </>
   );
 }
 
