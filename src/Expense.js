@@ -20,9 +20,9 @@ function Expense({expense, onUpdateExpense}) {
 
   return (
     <StyledExpense>
-      <h2>{expense.description}</h2>
-      <h4>{expense.amount}</h4>
-      <p>{expense.category} <Emoji category={expense.category}/></p>
+      <h2>Description: {expense.description}</h2>
+      <h4>Amount spent: ${expense.amount}</h4>
+      <h5>{expense.category} <Emoji category={expense.category}/></h5>
       <button onClick={handleClick}>{expense.necessary ? "Necessary" : "Not Necessary"}</button>
     </StyledExpense>
   )

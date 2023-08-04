@@ -1,4 +1,5 @@
 import React from 'react'
+import Emoji from './Emoji'
 
 function Summary({expenses}) {
   const allCategories = expenses.map(expense => expense.category)
@@ -11,10 +12,10 @@ function Summary({expenses}) {
 
   return (
     <div>
-        <h3>I am Summary</h3>
-        <p>Category Total Amount</p>
+        <h3>Summary of Amount spent based on category</h3>
+        <p>Total Amount: ${expenses.reduce((accum, expense) => expense.amount + accum, 0)} </p>
         {filteredCategories.map((category) =>
-          <p key={category}>{category} {totalAmount(category)}</p>
+          <p key={category}>{category} <Emoji category={category}/>: ${totalAmount(category)}</p>
         )}
     </div>
 

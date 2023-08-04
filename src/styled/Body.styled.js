@@ -13,6 +13,8 @@ li{
     padding: 10px;
     display: block;
 }
+
+
 `
 export const StyledContainer = styled.div `
 display: flex;
@@ -22,9 +24,21 @@ padding: 10px;
 `
 export const StyledExpense = styled.div`
 display: inline;
-width: 300px;
+width: 250px;
 height: auto;
 margin: 7px;
 box-shadow: 5px 3px 5px blue;
 border: 3px solid blue;
+padding-left: 10px;
+padding-bottom: 10px;
+text-align: left;
+
+button{
+    height: 30px;
+    width: 125px;
+}
+
+button:active{
+    transform: translateY(5px);
+}
 `
