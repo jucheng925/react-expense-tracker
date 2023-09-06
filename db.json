@@ -78,7 +78,7 @@
       "description": "Ice latte at local cafe",
       "amount": 5,
       "category": "Food and Drinks",
-      "necessary": false
+      "necessary": true
     },
     {
       "id": 11,
@@ -159,22 +159,6 @@
       "amount": 5,
       "category": "Food and Drinks",
       "necessary": false
-    },
-    {
-      "month": "may2023",
-      "description": "testing description",
-      "amount": 5555,
-      "category": "Health",
-      "necessary": false,
-      "id": 21
-    },
-    {
-      "month": "may2023",
-      "description": "testing description",
-      "amount": 5555,
-      "category": "Health",
-      "necessary": false,
-      "id": 22
     }
   ]
 }

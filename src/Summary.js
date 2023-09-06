@@ -3,18 +3,19 @@ import Emoji from './Emoji'
 import StyledTable from './styled/Table.styled'
 
 function Summary({expenses}) {
-  const allCategories = expenses.map(expense => expense.category)
-  const filteredCategories= allCategories.filter((category, index) => allCategories.indexOf(category) === index)
+  const categoriesForEveryExpense = expenses.map(expense => expense.category)
+  const allCategories= categoriesForEveryExpense.filter((category, index) => categoriesForEveryExpense.indexOf(category) === index)
   
   function totalAmount(category) {
     const expensesInThisCategory = expenses.filter(expense => expense.category === category)
     return expensesInThisCategory.reduce((accum, expense)=> expense.amount + accum, 0)
   }
+
   const overAllTotal = expenses.reduce((accum, expense) => expense.amount + accum, 0)
 
   return (
     <div>
-        <h3>Summary of Overall Amount Spent based on Category</h3>
+        <h3>Summary of Overall Amount Spent</h3>
         <p>Total Amount: ${overAllTotal} </p>
         <StyledTable>
           <thead>
@@ -25,7 +26,7 @@ function Summary({expenses}) {
             </tr>
           </thead>
           <tbody>
-            {filteredCategories.map((category) =>
+            {allCategories.map((category) =>
               <tr key={category}>
                 <td>{category} <Emoji category={category}/></td>
                 <td>${totalAmount(category)}</td>

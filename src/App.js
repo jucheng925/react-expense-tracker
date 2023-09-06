@@ -1,10 +1,10 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom"
 import React, {useState, useEffect} from 'react'
 import Home from "./Home"
 import NavBar from "./NavBar"
 import MonthsPage from "./MonthsPage"
-import { StyledHeader } from "./styled/Header.styled";
-import { StyledBody } from "./styled/Body.styled";
+import { StyledHeader } from "./styled/Header.styled"
+import { StyledBody } from "./styled/Body.styled"
 
 
 
@@ -17,7 +17,7 @@ function App() {
       .then(data => setExpenses(data))
   }, [])
   
-  function addNewExpense(newExpense) {
+  function handleAddExpense(newExpense) {
     setExpenses([...expenses, newExpense])
   }
 
@@ -41,7 +41,7 @@ function App() {
       <StyledBody>
         <Switch>
         <Route path="/months">
-          <MonthsPage expenses={expenses} addNewExpense={addNewExpense} onUpdateExpense={handleUpdateExpense}/>
+          <MonthsPage expenses={expenses} onAddExpense={handleAddExpense} onUpdateExpense={handleUpdateExpense}/>
         </Route>
         <Route exact path="/">
           <Home expenses={expenses}/>

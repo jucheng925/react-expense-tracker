@@ -1,11 +1,11 @@
 import React from 'react'
 import MonthsList from "./MonthsList"
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom"
 import Month from "./Month"
-import ExpenseForm from './ExpenseForm';
+import ExpenseForm from './ExpenseForm'
 
 
-function MonthsPage({expenses, onUpdateExpense, addNewExpense}) {
+function MonthsPage({expenses, onUpdateExpense, onAddExpense}) {
   
   let monthArray = []
   expenses.forEach((expense)=> {
@@ -26,7 +26,7 @@ function MonthsPage({expenses, onUpdateExpense, addNewExpense}) {
     <div>
       <Switch>
         <Route path="/months/add">
-          <ExpenseForm months={monthArray} displayFunction={capMonthandSpaceYear} addNewExpense={addNewExpense}/>
+          <ExpenseForm months={monthArray} displayFunction={capMonthandSpaceYear} onAddExpense={onAddExpense}/>
         </Route>
         <Route path="/months/:monthyear">
           <Month expenses={expenses} displayFunction={capMonthandSpaceYear} onUpdateExpense={onUpdateExpense}/>
