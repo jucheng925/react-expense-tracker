@@ -3,6 +3,8 @@
 ## About this Project
 This project was built using React. It will display and summarize personal expenses which will fetch from an db.json server. You are able to see the expenses for a particular month. There is also a feature where you are able to toggle between deciding whether this expense is considered to be necessary or not. Also there is a form component, where you can add a new expense. 
 
+## Demo
+![Demo](src/giphy.gif)
 
 ## Getting Started
 The backend of this project is a db.json file. So you will need two terminals, one to watch the server and the other to run the application.

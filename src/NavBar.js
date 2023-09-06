@@ -26,6 +26,7 @@ function NavBar() {
       </NavLink>
       <NavLink
         to="/months"
+        exact
         style={linkStyles}
         activeStyle={{
           background: "#1d1160",
