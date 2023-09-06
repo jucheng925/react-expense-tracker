@@ -14,7 +14,7 @@
       "description": "Monthly MetroCard",
       "amount": 130,
       "category": "Transportation",
-      "necessary": true
+      "necessary": false
     },
     {
       "id": 3,
@@ -159,6 +159,14 @@
       "amount": 5,
       "category": "Food and Drinks",
       "necessary": false
+    },
+    {
+      "month": "june2023",
+      "description": "bowling",
+      "amount": 25,
+      "category": "Entertainment",
+      "necessary": false,
+      "id": 21
     }
   ]
 }
