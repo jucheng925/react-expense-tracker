@@ -69,8 +69,8 @@ function ExpenseForm({ months, displayFunction, onAddExpense }) {
         <option value="Personal"> Personal</option>
       </select>
       <br />
-      <input type ="checkbox" id="necessary" name="necessary" checked={formData.necessary} onChange={handleChange}/>
       <label htmlFor="necessary"> Is necessary? </label>
+      <input type="checkbox" id="necessary" name="necessary" checked={formData.necessary} onChange={handleChange}/>
       <br />
       <button type="submit">Submit</button>
     </form>

@@ -41,13 +41,13 @@ function App() {
       }
     })
 
-    //to display the months in specific format of capitalize month space year
-    function capMonthandSpaceYear(monthYear) {
-      const dispYear = monthYear.slice(-4) 
-      const dispMonth = monthYear.slice(0, -4)
-      const capitalizedDispMonth = dispMonth.charAt(0).toUpperCase() + dispMonth.slice(1)
-      return (capitalizedDispMonth + " " + dispYear)
-    }
+  //to display the months in specific format of capitalize month space year
+  function capMonthandSpaceYear(monthYear) {
+    const dispYear = monthYear.slice(-4) 
+    const dispMonth = monthYear.slice(0, -4)
+    const capitalizedDispMonth = dispMonth.charAt(0).toUpperCase() + dispMonth.slice(1)
+    return (capitalizedDispMonth + " " + dispYear)
+  }
 
   return (
     <>
