@@ -35,7 +35,7 @@ function NavBar() {
         Months
       </NavLink>
       <NavLink
-        to="/months/add"
+        to="/add"
         exact
         style={linkStyles}
         activeStyle={{

@@ -167,6 +167,14 @@
       "category": "Entertainment",
       "necessary": false,
       "id": 21
+    },
+    {
+      "month": "june2023",
+      "description": "money",
+      "amount": 250,
+      "category": "Personal",
+      "necessary": false,
+      "id": 22
     }
   ]
 }

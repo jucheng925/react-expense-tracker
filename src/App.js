@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react'
 import Home from "./Home"
 import NavBar from "./NavBar"
 import MonthsPage from "./MonthsPage"
+import ExpenseForm from './ExpenseForm'
 import { StyledHeader } from "./styled/Header.styled"
 import { StyledBody } from "./styled/Body.styled"
 
@@ -32,6 +33,22 @@ function App() {
     setExpenses(updatedExpenses)
   }
 
+  // to filter out the months using the expenses data
+  let monthArray = []
+  expenses.forEach((expense)=> {
+    if(!monthArray.includes(expense.month)) {
+        monthArray.push(expense.month)
+      }
+    })
+
+    //to display the months in specific format of capitalize month space year
+    function capMonthandSpaceYear(monthYear) {
+      const dispYear = monthYear.slice(-4) 
+      const dispMonth = monthYear.slice(0, -4)
+      const capitalizedDispMonth = dispMonth.charAt(0).toUpperCase() + dispMonth.slice(1)
+      return (capitalizedDispMonth + " " + dispYear)
+    }
+
   return (
     <>
       <StyledHeader>
@@ -40,8 +57,11 @@ function App() {
       </StyledHeader>
       <StyledBody>
         <Switch>
+        <Route path="/add">
+          <ExpenseForm months={monthArray} displayFunction={capMonthandSpaceYear} onAddExpense={handleAddExpense}/>
+        </Route>
         <Route path="/months">
-          <MonthsPage expenses={expenses} onAddExpense={handleAddExpense} onUpdateExpense={handleUpdateExpense}/>
+          <MonthsPage expenses={expenses} onUpdateExpense={handleUpdateExpense} months={monthArray} displayFunction={capMonthandSpaceYear}/>
         </Route>
         <Route exact path="/">
           <Home expenses={expenses}/>

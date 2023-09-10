@@ -13,7 +13,7 @@ function Month({expenses, displayFunction, onUpdateExpense}) {
     <>
     <h1>Here are your expenses for {displayFunction(params.monthyear)}</h1>
     <p>Total amount spent in {displayFunction(params.monthyear)}: ${amountSpentThisMonth}</p>
-    <Link to={`/months/add`}>Add New Expense</Link>
+    <Link to={`/add`}>Add New Expense</Link>
       <StyledContainer >
         {filterExpenses.map(expense => <Expense key={expense.id} expense={expense} onUpdateExpense={onUpdateExpense}/>)}
       </StyledContainer>
