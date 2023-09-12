@@ -28,8 +28,7 @@ App
 |-- Home
 |   |__ Summary
 |-- ExpenseForm
-|__ MonthsPage
-    |-- MonthList
+|__ MonthsList 
     |__ Month
         |__ Expense
 ```

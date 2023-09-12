@@ -2,7 +2,8 @@ import { Route, Switch } from "react-router-dom"
 import React, {useState, useEffect} from 'react'
 import Home from "./Home"
 import NavBar from "./NavBar"
-import MonthsPage from "./MonthsPage"
+import MonthsList from "./MonthsList"
+import Month from "./Month"
 import ExpenseForm from './ExpenseForm'
 import { StyledHeader } from "./styled/Header.styled"
 import { StyledBody } from "./styled/Body.styled"
@@ -60,8 +61,11 @@ function App() {
         <Route path="/add">
           <ExpenseForm months={monthArray} displayFunction={capMonthandSpaceYear} onAddExpense={handleAddExpense}/>
         </Route>
-        <Route path="/months">
-          <MonthsPage expenses={expenses} onUpdateExpense={handleUpdateExpense} months={monthArray} displayFunction={capMonthandSpaceYear}/>
+        <Route path="/months/:monthyear">
+          <Month expenses={expenses} displayFunction={capMonthandSpaceYear} onUpdateExpense={handleUpdateExpense}/>
+        </Route>
+        <Route exact path="/months">
+          <MonthsList months={monthArray} displayFunction={capMonthandSpaceYear}/> 
         </Route>
         <Route exact path="/">
           <Home expenses={expenses}/>

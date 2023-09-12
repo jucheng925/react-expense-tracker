@@ -6,7 +6,7 @@
       "description": "Rent",
       "amount": 2500,
       "category": "Housing",
-      "necessary": true
+      "necessary": false
     },
     {
       "id": 2,
@@ -159,6 +159,22 @@
       "amount": 5,
       "category": "Food and Drinks",
       "necessary": false
+    },
+    {
+      "month": "may2023",
+      "description": "bowling",
+      "amount": 50,
+      "category": "Entertainment",
+      "necessary": false,
+      "id": 21
+    },
+    {
+      "month": "june2023",
+      "description": "bowling",
+      "amount": 25,
+      "category": "Entertainment",
+      "necessary": false,
+      "id": 22
     }
   ]
 }
