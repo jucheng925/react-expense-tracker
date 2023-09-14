@@ -6,7 +6,7 @@ function Summary({expenses}) {
   const categoriesForEveryExpense = expenses.map(expense => expense.category)
   const allCategories= categoriesForEveryExpense.filter((category, index) => categoriesForEveryExpense.indexOf(category) === index)
   
-  function totalAmount(category) {
+  const totalAmount = (category) => {
     const expensesInThisCategory = expenses.filter(expense => expense.category === category)
     return expensesInThisCategory.reduce((accum, expense)=> expense.amount + accum, 0)
   }

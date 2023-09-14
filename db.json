@@ -162,18 +162,18 @@
     },
     {
       "month": "may2023",
-      "description": "bowling",
-      "amount": 50,
-      "category": "Entertainment",
+      "description": "eating out",
+      "amount": 200,
+      "category": "Food and Drinks",
       "necessary": false,
       "id": 21
     },
     {
       "month": "june2023",
       "description": "bowling",
-      "amount": 25,
+      "amount": 50,
       "category": "Entertainment",
-      "necessary": false,
+      "necessary": true,
       "id": 22
     }
   ]

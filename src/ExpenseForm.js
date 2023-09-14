@@ -14,7 +14,7 @@ function ExpenseForm({ months, displayFunction, onAddExpense }) {
   const renderDropDownMonths = months.map((month) => <option key={month} value={month}>{displayFunction(month)}</option>)
   
   
-  function handleChange(e) {
+  const handleChange = (e) => {
     const name = e.target.name
     let value = e.target.value
     if (e.target.type === "checkbox") {
@@ -29,7 +29,7 @@ function ExpenseForm({ months, displayFunction, onAddExpense }) {
     })
   }
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault()
     fetch("http://localhost:3000/expenses", {
       method: "POST",

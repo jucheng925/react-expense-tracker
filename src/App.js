@@ -19,11 +19,9 @@ function App() {
       .then(data => setExpenses(data))
   }, [])
   
-  function handleAddExpense(newExpense) {
-    setExpenses([...expenses, newExpense])
-  }
+  const handleAddExpense = (newExpense) => setExpenses([...expenses, newExpense])
 
-  function handleUpdateExpense(updatedExpense) {
+  const handleUpdateExpense = (updatedExpense) => {
     const updatedExpenses = expenses.map((expense) => {
       if (expense.id === updatedExpense.id) {
         return updatedExpense;
@@ -43,12 +41,13 @@ function App() {
     })
 
   //to display the months in specific format of capitalize month space year
-  function capMonthandSpaceYear(monthYear) {
+  const capMonthandSpaceYear = (monthYear) => {
     const dispYear = monthYear.slice(-4) 
     const dispMonth = monthYear.slice(0, -4)
     const capitalizedDispMonth = dispMonth.charAt(0).toUpperCase() + dispMonth.slice(1)
     return (capitalizedDispMonth + " " + dispYear)
   }
+
 
   return (
     <>
@@ -58,18 +57,18 @@ function App() {
       </StyledHeader>
       <StyledBody>
         <Switch>
-        <Route path="/add">
-          <ExpenseForm months={monthArray} displayFunction={capMonthandSpaceYear} onAddExpense={handleAddExpense}/>
-        </Route>
-        <Route path="/months/:monthyear">
-          <Month expenses={expenses} displayFunction={capMonthandSpaceYear} onUpdateExpense={handleUpdateExpense}/>
-        </Route>
-        <Route exact path="/months">
-          <MonthsList months={monthArray} displayFunction={capMonthandSpaceYear}/> 
-        </Route>
-        <Route exact path="/">
-          <Home expenses={expenses}/>
-        </Route>
+          <Route path="/add">
+            <ExpenseForm months={monthArray} displayFunction={capMonthandSpaceYear} onAddExpense={handleAddExpense}/>
+          </Route>
+          <Route path="/months/:monthyear">
+            <Month expenses={expenses} displayFunction={capMonthandSpaceYear} onUpdateExpense={handleUpdateExpense}/>
+          </Route>
+          <Route exact path="/months">
+            <MonthsList months={monthArray} displayFunction={capMonthandSpaceYear}/> 
+          </Route>
+          <Route exact path="/">
+            <Home expenses={expenses}/>
+          </Route>
         </Switch>
       </StyledBody>
     </>

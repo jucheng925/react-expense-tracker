@@ -4,7 +4,7 @@ import { StyledExpense } from './styled/Body.styled'
 
 function Expense({expense, onUpdateExpense}) {
 
-  function handleClick() {
+  const handleClick = () => {
     fetch(`http://localhost:3000/expenses/${expense.id}`, {
       method: "PATCH",
       headers: {
