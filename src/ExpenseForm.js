@@ -13,7 +13,6 @@ function ExpenseForm({ months, displayFunction, onAddExpense }) {
 
   const renderDropDownMonths = months.map((month) => <option key={month} value={month}>{displayFunction(month)}</option>)
   
-  
   const handleChange = (e) => {
     const name = e.target.name
     let value = e.target.value

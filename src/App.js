@@ -52,7 +52,7 @@ function App() {
   return (
     <>
       <StyledHeader>
-        <h1>Personal Expense Tracker</h1>
+        <h1>Dollar Tracker: Your Personal Expense Tracker</h1>
         <NavBar />
       </StyledHeader>
       <StyledBody>
